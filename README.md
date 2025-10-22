@@ -36,7 +36,7 @@ A **command-line typing trainer** built in **Python**, designed to help users im
 
 ---
 
-## ⚙️ Installation
+##  Installation
 
 ###  Prerequisites
 Make sure you have:
