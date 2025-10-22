@@ -19,8 +19,6 @@ import textwrap
 import time
 
 # ----------------------- MySQL Setup ----------------------- #
-# 1) pip install mysql-connector-python
-# 2) Update credentials below
 DB_HOST = "localhost"
 DB_USER = "root"
 DB_PASSWORD = ""
@@ -283,7 +281,6 @@ def run_word_drill(n_words=25):
     return start_session("Word Drill", target)
 
 def start_session(mode_name, target):
-    # Keep original behavior: live mode (works in real terminals)
     return run_realtime_prompt(mode_name, target)
 
 # ----------------------- Core live prompt ----------------------- #
@@ -297,7 +294,6 @@ def run_realtime_prompt(mode_name, target):
     t0 = time.perf_counter()
     try:
         while True:
-            # Render live view
             elapsed = max(time.perf_counter() - t0, 1e-6)
             current = ''.join(typed)
             wpm, raw, acc, errs = compute_stats(target[:len(current)], current, elapsed)
